@@ -7,7 +7,7 @@ class Difficulty extends Component {
 		return (
 			<div>
 				<h1>Difficulty?</h1>
-				<div className="difficulty-container">
+				<div className="container">
 					<DifficultyChoice difficulty="easy" />
 					<DifficultyChoice difficulty="medium" />
 					<DifficultyChoice difficulty="hard" />

@@ -1,0 +1,9 @@
+h2 {
+	font-family: 'Noticia Text', serif;
+	font-size: 5em;
+	text-align: center;
+	padding: 20px 0 0 50px;
+	margin: 100px 0 100px 0;
+	color: #263238;
+	letter-spacing: 15px;
+}

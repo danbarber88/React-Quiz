@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/CategoryContainer.css';
 import Category from './Category';
 
 class CategoryContainer extends Component {
@@ -7,7 +6,7 @@ class CategoryContainer extends Component {
 		return(
 			<div>
 				<h1>Category?</h1>
-				<div className="category-container">
+				<div className="container">
 					<Category name="Film" />
 					<Category name="Geography" />
 					<Category name="Video Games" />
