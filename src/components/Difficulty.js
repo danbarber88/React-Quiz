@@ -5,10 +5,16 @@ import '../styles/Difficulty.css';
 class Difficulty extends Component {
 	render(){
 		return (
-			<div className="difficulty-container">
-				<DifficultyChoice difficulty="Easy" />
-				<DifficultyChoice difficulty="Medium" />
-				<DifficultyChoice difficulty="Hard" />
+			<div>
+				<h1>Difficulty?</h1>
+				<div className="difficulty-container">
+					<DifficultyChoice difficulty="easy" />
+					<DifficultyChoice difficulty="medium" />
+					<DifficultyChoice difficulty="hard" />
+				</div>
+				<div className="mix box">
+					<p>Mix it up!</p>
+				</div>
 			</div>
 		);
 	}

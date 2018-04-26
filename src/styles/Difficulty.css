@@ -4,5 +4,30 @@
 	justify-content: center;
 	width: 80%;
 	margin: 0 auto;
-	background-color: red;
+}
+
+.difficulty-text {
+	text-transform: capitalize;
+}
+
+.mix {
+	width: 600px;
+	height: 150px;
+	margin: 30px auto;
+}
+
+.mix:hover {
+	background-color: #5d4037;
+}
+
+.easy:hover {
+	background-color: #69f0ae;
+}
+
+.medium:hover {
+	background-color: #ffab40;
+}
+
+.hard:hover {
+	background-color: #ff5252;
 }

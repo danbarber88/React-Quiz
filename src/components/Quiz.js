@@ -8,7 +8,7 @@ class Quiz extends Component {
 	render () {
 		return (
 			<div>
-				<Route path="/" render={() => <Redirect to="/category" />} />
+				{/* <Route path="/" render={() => <Redirect to="/category" />} /> */}
 				<Route path="/category" component={CategoryContainer} />
 				<Route path="/difficulty" component={Difficulty} />
 			</div>
