@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 import CategoryContainer from './CategoryContainer';
+import Difficulty from './Difficulty';
 
 class Quiz extends Component {
 	render () {
@@ -9,7 +10,7 @@ class Quiz extends Component {
 			<div>
 				<Route path="/" render={() => <Redirect to="/category" />} />
 				<Route path="/category" component={CategoryContainer} />
-				<Route path="/difficulty" render={() => <h1>Difficulty?</h1>} />
+				<Route path="/difficulty" component={Difficulty} />
 			</div>
 		);
 	}
