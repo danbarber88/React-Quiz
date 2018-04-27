@@ -7,7 +7,7 @@ class Question extends Component {
 		return(
 			<div>
 				<QuestionText 
-					text="What in the bloody hell did that flippin physco fox say?" 
+					text="One of the deadliest pandemics, the &quot;Spanish Flu&quot;, killed off what percentage of the human world population at the time?" 
 				/>
 				<OptionContainer />
 			</div>

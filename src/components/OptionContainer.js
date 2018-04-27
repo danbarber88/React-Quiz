@@ -5,10 +5,10 @@ class OptionContainer extends Component {
 	render() {
 		return(
 			<div class="container">
-				<Option text="Bim bam zim bam" />
-				<Option text="Pis' off" />
-				<Option text="Ring-ding-ding-ding-dingeringeding!" />
-				<Option text="Hello, I'm a Fox!" />
+				<Option text="6 to 10 percent" />
+				<Option text="1 to 3 percent" />
+				<Option text="3 to 6 percent" />
+				<Option text="less than 1 percent" />
 			</div>
 		);
 	}
