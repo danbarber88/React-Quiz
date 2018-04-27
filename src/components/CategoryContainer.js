@@ -5,11 +5,11 @@ import Client from '../Client';
 
 class CategoryContainer extends Component {
 	render() {
-		let categories = this.props.categories.map((categorie, i) => (
+		let categories = this.props.categories.map((category, i) => (
 			<Category 
 				key={i}
-				name={categorie.name}
-				id={categorie.id}
+				name={category.name}
+				id={category.id}
 				categoryChoice={this.props.categoryChoice}
 			/>
 		))

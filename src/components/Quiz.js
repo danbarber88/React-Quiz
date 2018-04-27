@@ -11,7 +11,7 @@ import Client from '../Client';
 // 1. Dont forget about session token to stop repeat questions
 // 2. in Question build url from quiz state and get 10 questions
 // 3. work out question logic
-// Any Categorie option is not included
+// Any Category option is not included
 
 class Quiz extends Component {
 	constructor(props) {
@@ -19,7 +19,7 @@ class Quiz extends Component {
 
 		this.state = {
 			categories: [],
-			chosenCategorie: '',
+			chosenCategory: '',
 			difficulty: '',
 		}
 
@@ -42,7 +42,7 @@ class Quiz extends Component {
 
 	categoryChoice(categoryId) {
 		this.setState({
-			chosenCategorie: categoryId,
+			chosenCategory: categoryId,
 		})
 	}
 
