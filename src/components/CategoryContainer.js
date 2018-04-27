@@ -10,6 +10,7 @@ class CategoryContainer extends Component {
 				key={i}
 				name={categorie.name}
 				id={categorie.id}
+				categoryChoice={this.props.categoryChoice}
 			/>
 		))
 

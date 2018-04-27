@@ -9,9 +9,18 @@ class Difficulty extends Component {
 			<div>
 				<h1>Difficulty?</h1>
 				<div className="container">
-					<DifficultyChoice difficulty="easy" />
-					<DifficultyChoice difficulty="medium" />
-					<DifficultyChoice difficulty="hard" />
+					<DifficultyChoice 
+						difficulty="easy" 
+						difficultyChoice={this.props.difficultyChoice}
+					/>
+					<DifficultyChoice 
+						difficulty="medium" 
+						difficultyChoice={this.props.difficultyChoice}
+					/>
+					<DifficultyChoice 
+						difficulty="hard" 
+						difficultyChoice={this.props.difficultyChoice}
+					/>
 				</div>
 				<Link to="/question">
 					<div className="mix box">
