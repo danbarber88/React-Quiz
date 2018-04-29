@@ -8,7 +8,7 @@ class DifficultyChoice extends Component {
 
 	render() {
 		return(
-			<Link to="/question" onClick={this.handleClick}>
+			<Link to="/questions" onClick={this.handleClick}>
 				<div className={`box ${this.props.difficulty}`} onClick={this.handleClick}>
 					<p className="difficulty-text">{this.props.difficulty}</p>
 				</div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 import '../styles/Option.css';
 
@@ -14,7 +15,11 @@ class Option extends Component {
 	handleClick = () => {
 		this.setState({
 			classNames: this.props.checkAnswer(this.props.text) ? "box correct" : "box incorrect",
-		})
+		});
+		setTimeout(() => {
+			this.setState({ classNames: "box"});
+			this.props.nextQuestion();
+		}, 2000);
 	}
 
 	render() {

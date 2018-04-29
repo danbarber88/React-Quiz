@@ -10,7 +10,9 @@ import Client from '../Client';
 // TODO
 // 1. Dont forget about session token to stop repeat questions
 // 2. in Question build url from quiz state and get 10 questions
-// 3. work out question logic
+// 3. Block clicks after first click: check the react router docs for preventing transitions
+// 4. Move category state to catgory container so we are not making an api call everytime quiz mounts.
+// 5. end screen with score out of 10
 
 class Quiz extends Component {
 	constructor(props) {
@@ -37,34 +39,6 @@ class Quiz extends Component {
 			],
 			chosenCategory: '',
 			difficulty: '',
-			questions: [
-				{
-					question: "Which movie released in 2016 features Superman and Batman fighting?",
-					correct_answer: "Batman v Superman: Dawn of Justice",
-					incorrect_answers: [
-						"Batman v Superman: Superapocalypse",
-						"Batman v Superman: Black of Knight",
-						"Batman v Superman: Knightfall"
-					]
-				},
-				{
-					question: "Who plays Alice in the Resident Evil movies?",
-					correct_answer: "Milla Jovovich",
-					incorrect_answers: [
-						"Madison Derpe",
-						"Milla Johnson",
-						"Kim Demp"
-					]
-				},
-				{
-					question: "What does the fox say?",
-					correct_answer: "True",
-					incorrect_answers: [
-						"False",
-					]
-				}
-			],
-			questionCount: 0,
 		}
 
 		this.categoryChoice = this.categoryChoice.bind(this);
@@ -118,11 +92,9 @@ class Quiz extends Component {
 					} 
 				/>
 				<Route 
-					path="/question" 
+					path="/questions" 
 					render={() => 
-						<Question 
-							questions={this.state.questions}
-						/>
+						<Question />
 					} 
 				/>
 			</div>

@@ -22,7 +22,7 @@ class Difficulty extends Component {
 						difficultyChoice={this.props.difficultyChoice}
 					/>
 				</div>
-				<Link to="/question">
+				<Link to="/questions">
 					<div className="mix box">
 						<p>Mix it up!</p>
 					</div>

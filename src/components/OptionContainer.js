@@ -4,7 +4,6 @@ import Option from './Option';
 import shuffle from 'shuffle-array';
 
 class OptionContainer extends Component {
-
 	shuffleAnswers = () => {
 		const correctAnswer = this.props.correct;
 		let answers = this.props.incorrect.concat(correctAnswer);
@@ -12,17 +11,13 @@ class OptionContainer extends Component {
 		return answers
 	}
 
-	checkAnswer = (answer) => {
-		const correctAnswer = this.props.correct;
-		return answer === correctAnswer ? true : false;
-	};
-
 	render() {
 		let answers = this.shuffleAnswers().map((answer, i) => (
 			<Option 
 				key={i}
 				text={answer}
-				checkAnswer={this.checkAnswer}
+				checkAnswer={this.props.checkAnswer}
+				nextQuestion={this.props.nextQuestion}
 			/>
 		));
 		
