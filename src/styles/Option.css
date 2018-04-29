@@ -1,0 +1,9 @@
+.correct,
+.correct:hover {
+	background-color: #69f0ae;
+	color: #263238;
+}
+
+.incorrect {
+	opacity: .2;
+}

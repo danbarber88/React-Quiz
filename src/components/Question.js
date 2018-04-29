@@ -3,13 +3,19 @@ import QuestionText from './QuestionText';
 import OptionContainer from './OptionContainer';
 
 class Question extends Component {
+
+	
+
 	render() {
 		return(
 			<div>
 				<QuestionText 
-					text="One of the deadliest pandemics, the &quot;Spanish Flu&quot;, killed off what percentage of the human world population at the time?" 
+					text={this.props.questions[2].question} 
 				/>
-				<OptionContainer />
+				<OptionContainer 
+					correct={this.props.questions[2].correct_answer}
+					incorrect={this.props.questions[2].incorrect_answers}
+				/>
 			</div>
 		);
 	}

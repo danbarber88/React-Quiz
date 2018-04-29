@@ -18,7 +18,16 @@ class CategoryContainer extends Component {
 			<div>
 				<h1>Category?</h1>
 				<div className="container">
-					{categories}
+					{
+						[
+							<Category
+								key={11} 
+								name="Any Category"
+								id=""
+							/>,
+							...categories
+						]
+					}
 				</div>
 			</div>
 		);
