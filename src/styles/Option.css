@@ -5,6 +5,13 @@
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.incorrect {
-	opacity: .2;
+.incorrect,
+.incorrect:hover {
+	background-color: #ff5252;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.after-choice:hover {
+	box-shadow: none;
+	background-color: #607d8b;
 }
