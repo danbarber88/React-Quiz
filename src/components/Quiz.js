@@ -10,7 +10,7 @@ import Client from '../Client';
 // TODO
 // 1. Dont forget about session token to stop repeat questions
 // 2. in Question build url from quiz state and get 10 questions
-// 3. Block clicks after first click: check the react router docs for preventing transitions
+// 3. 
 // 4. Move category state to catgory container so we are not making an api call everytime quiz mounts.
 // 5. end screen with score out of 10
 // 6. allow one wrong answer which starts a short countdown (less than a second) to the next question - use a yellow/orange countdown bar 
@@ -76,7 +76,7 @@ class Quiz extends Component {
 	render () {
 		return (
 			<div>
-				{/* <Route path="/" render={() => <Redirect to="/category" />} />*/}
+				<Route path="/" render={() => <Redirect to="/category" />} />
 				<Route 
 					path="/category" 
 					render={() => 
