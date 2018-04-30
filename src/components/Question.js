@@ -81,7 +81,8 @@ class Question extends Component {
 		return(
 			<div>
 				<QuestionText 
-					text={this.state.currentQuestion.question} 
+					text={this.state.currentQuestion.question}
+					questionNumber={this.state.questionNumber}
 				/>
 				<OptionContainer 
 					correct={this.state.currentQuestion.correct_answer}

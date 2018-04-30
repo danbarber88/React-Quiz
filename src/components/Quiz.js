@@ -13,6 +13,9 @@ import Client from '../Client';
 // 3. Block clicks after first click: check the react router docs for preventing transitions
 // 4. Move category state to catgory container so we are not making an api call everytime quiz mounts.
 // 5. end screen with score out of 10
+// 6. allow one wrong answer which starts a short countdown (less than a second) to the next question - use a yellow/orange countdown bar 
+//		like the pomodor one.
+// 7. handle errors 
 
 class Quiz extends Component {
 	constructor(props) {
