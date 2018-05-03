@@ -40,10 +40,17 @@ class OptionContainer extends Component {
 						})
 					}
 				} else {
-					return Object.assign({}, {
-						text: answer,
-						classNames: "box after-choice"
-					})
+					if (answer === this.props.correct) {
+						return Object.assign({}, {
+							text: answer,
+							classNames: "box correct"
+						})
+					} else {
+						return Object.assign({}, {
+							text: answer,
+							classNames: "box after-choice"
+						})
+					}
 				}
 			});
 			this.setState({
