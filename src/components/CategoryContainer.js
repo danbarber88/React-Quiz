@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Category from './Category';
 
 import Client from '../Client';
@@ -19,12 +20,12 @@ class CategoryContainer extends Component {
 				<h1>Category?</h1>
 				<div className="container">
 					{
-						[
-							<Category
-								key={11111} 
-								name="Any Category"
-								id=""
-							/>,
+						[	
+							<Link to="/difficulty">
+								<div className="box">
+									<p>Any Category</p>
+								</div>
+							</Link>,
 							...categories
 						]
 					}

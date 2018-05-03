@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-
+import he from 'he';
 import '../styles/Option.css';
 
 class Option extends Component {
@@ -12,7 +11,7 @@ class Option extends Component {
 	render() {
 		return(
 			<div className={this.props.classNames} onClick={this.handleClick}>
-				<p>{this.props.text}</p>
+				<p>{he.decode(this.props.text)}</p>
 			</div>
 		);
 	}
