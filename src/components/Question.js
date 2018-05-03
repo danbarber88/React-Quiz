@@ -28,7 +28,8 @@ class Question extends Component {
 	getQuestions() {
 		const category = this.props.category;
 		const difficulty = this.props.difficulty;
-		Client.fetchQuestions(category, difficulty, (data) => {
+		const token = this.props.token;
+		Client.fetchQuestions(category, difficulty, token, (data) => {
 			this.setState({
 				questions: data.results,
 				currentQuestion: data.results[0],
@@ -37,13 +38,6 @@ class Question extends Component {
 			});
 		});
 	};
-
-	// showQuestion = () => {
-	// 	this.setState({
-	// 		currentQuestion: this.state.questions[this.state.questionNumber],
-	// 		
-	// 	})
-	// };
 
 	nextQuestion() {
 		this.setState({

@@ -1,3 +1,10 @@
+// Fetch Session Token
+function fetchToken(callback) {
+	fetch("https://opentdb.com/api_token.php?command=request")
+		.then((res) => res.json())
+		.then(callback)
+}
+
 // Fetch the categories
 function fetchCategories(callback) {
 	fetch("https://opentdb.com/api_category.php")
@@ -6,13 +13,14 @@ function fetchCategories(callback) {
 }
 
 // Fetch 10 questions
-function fetchQuestions(category, difficulty, callback) {
-	fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}`)
+function fetchQuestions(category, difficulty, token, callback) {
+	fetch(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&token=${token}`)
 		.then((res) => res.json())
 		.then(callback)
 }
 
-const Client = { 
+const Client = {
+	fetchToken, 
 	fetchCategories, 
 	fetchQuestions
 };

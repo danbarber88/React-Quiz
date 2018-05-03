@@ -8,17 +8,25 @@ import Question from './Question';
 import Client from '../Client';
 
 // TODO
-// 1. Dont forget about session token to stop repeat questions
-// 2. in Question build url from quiz state and get 10 questions
-// 3. make a loading component and use for category adn question loading.
-// 4. end screen with score out of 10
-// 5. handle errors 
+// 1.[x] Session token
+// 	1a.[ ] Reset token if user has exhausted questions in any category - Code 4: Token Empty.
+// 	1b.[ ] Handle Error - Code 3: Token Not Found.
+// 2.[ ]  handle errors with response codes from api. handle them in the promise chains of Client.js
+// 	2a. [ ] Mainly handle Code 1: No Results, API doesnt have enough results (Ex. Asking for 10 question but only have 8).
+// 3.[ ]  make a loading component and use for category and question loading.
+// 4.[ ]  make responsive
+// 5.[ ]  check console errors and clean up accordinly
+// 6.[ ]  end screen with score out of 10
+// 7.[ ]  show questions available in each category and then number of questions available per difficulty. 
+//    		Might require lots of calls to same url, making it slow.
+// 8.[ ]  Allow users one wrong answer? - fade it out when clicked.
 
 class Quiz extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
+			sessionToken: '',
 			categories: [],
 			chosenCategory: '',
 			difficulty: '',
@@ -26,12 +34,23 @@ class Quiz extends Component {
 
 		this.categoryChoice = this.categoryChoice.bind(this);
 		this.difficultyChoice = this.difficultyChoice.bind(this);
+		this.getToken = this.getToken.bind(this);
 		this.getCategories = this.getCategories.bind(this);
 	}
 
 	componentWillMount() {
+		this.getToken();
 		this.getCategories();
 	}
+
+	getToken() {
+		Client.fetchToken((data) => {
+			alert("Now using new session token!");
+			this.setState({
+				sessionToken: data.token,
+			});
+		});
+	};
 
 	getCategories() {
 		Client.fetchCategories((data) => {
@@ -80,6 +99,7 @@ class Quiz extends Component {
 						<Question 
 							category={this.state.chosenCategory}
 							difficulty={this.state.difficulty}
+							token={this.state.sessionToken}
 						/>
 					} 
 				/>
