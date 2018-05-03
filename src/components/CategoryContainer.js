@@ -21,7 +21,7 @@ class CategoryContainer extends Component {
 					{
 						[
 							<Category
-								key={11} 
+								key={11111} 
 								name="Any Category"
 								id=""
 							/>,

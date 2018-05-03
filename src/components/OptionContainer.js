@@ -51,7 +51,6 @@ class OptionContainer extends Component {
 				blockClick: true,
 			});
 			setTimeout(() => {
-				
 				this.props.nextQuestion();
 				this.shuffleAnswers();
 				this.setState({

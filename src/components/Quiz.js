@@ -10,56 +10,36 @@ import Client from '../Client';
 // TODO
 // 1. Dont forget about session token to stop repeat questions
 // 2. in Question build url from quiz state and get 10 questions
-// 3. 
-// 4. Move category state to catgory container so we are not making an api call everytime quiz mounts.
-// 5. end screen with score out of 10
-// 6. allow one wrong answer which starts a short countdown (less than a second) to the next question - use a yellow/orange countdown bar 
-//		like the pomodor one.
-// 7. handle errors 
+// 3. make a loading component and use for category adn question loading.
+// 4. end screen with score out of 10
+// 5. handle errors 
 
 class Quiz extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			categories: [
-				{
-					id: 9,
-					name: "General Knowledge"
-				},
-				{
-					id: 10,
-					name: "Entertainment: Books"
-				},
-				{
-					id: 11,
-					name: "Entertainment: Film"
-				},
-				{
-					id: 12,
-					name: "Entertainment: Music"
-				},
-			],
+			categories: [],
 			chosenCategory: '',
 			difficulty: '',
 		}
 
 		this.categoryChoice = this.categoryChoice.bind(this);
 		this.difficultyChoice = this.difficultyChoice.bind(this);
-		// this.getCategories = this.getCategories.bind(this);
+		this.getCategories = this.getCategories.bind(this);
 	}
 
-	// componentWillMount() {
-	// 	this.getCategories();
-	// }
+	componentWillMount() {
+		this.getCategories();
+	}
 
-	// getCategories() {
-	// 	Client.fetchCategories((data) => {
-	// 		this.setState({
-	// 			categories: data.trivia_categories
-	// 		});
-	// 	});
-	// }
+	getCategories() {
+		Client.fetchCategories((data) => {
+			this.setState({
+				categories: data.trivia_categories
+			});
+		});
+	}
 
 	categoryChoice(categoryId) {
 		this.setState({
@@ -97,7 +77,10 @@ class Quiz extends Component {
 				<Route 
 					path="/questions" 
 					render={() => 
-						<Question />
+						<Question 
+							category={this.state.chosenCategory}
+							difficulty={this.state.difficulty}
+						/>
 					} 
 				/>
 			</div>
