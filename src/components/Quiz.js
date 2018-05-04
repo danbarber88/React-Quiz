@@ -35,6 +35,7 @@ class Quiz extends Component {
 		this.categoryChoice = this.categoryChoice.bind(this);
 		this.difficultyChoice = this.difficultyChoice.bind(this);
 		this.getToken = this.getToken.bind(this);
+		this.resetToken = this.resetToken.bind(this);
 		this.getCategories = this.getCategories.bind(this);
 	}
 
@@ -45,7 +46,14 @@ class Quiz extends Component {
 
 	getToken() {
 		Client.fetchToken((data) => {
-			alert("Now using new session token!");
+			this.setState({
+				sessionToken: data.token,
+			});
+		});
+	};
+
+	resetToken() {
+		Client.fetchToken((data) => {
 			this.setState({
 				sessionToken: data.token,
 			});
@@ -100,6 +108,7 @@ class Quiz extends Component {
 							category={this.state.chosenCategory}
 							difficulty={this.state.difficulty}
 							token={this.state.sessionToken}
+							resetToken={this.resetToken}
 						/>
 					} 
 				/>

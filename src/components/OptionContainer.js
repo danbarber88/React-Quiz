@@ -65,7 +65,7 @@ class OptionContainer extends Component {
 					blockClick: false,
 				});
 				
-			}, 2000);
+			}, 300);
 		}
 	}
 

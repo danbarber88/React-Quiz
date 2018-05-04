@@ -5,6 +5,13 @@ function fetchToken(callback) {
 		.then(callback)
 }
 
+// Reset Session Token
+function resetToken(token, callback) {
+	fetch(`https://opentdb.com/api_token.php?command=reset&token=${token}`)
+		.then((res) => res.json())
+		.then(callback)
+}
+
 // Fetch the categories
 function fetchCategories(callback) {
 	fetch("https://opentdb.com/api_category.php")
@@ -20,7 +27,8 @@ function fetchQuestions(category, difficulty, token, callback) {
 }
 
 const Client = {
-	fetchToken, 
+	fetchToken,
+	resetToken,
 	fetchCategories, 
 	fetchQuestions
 };
