@@ -13,10 +13,6 @@ class OptionContainer extends Component {
 		}
 	}
 
-	componentWillUnmount() {
-		clearTimeout(this.state.timeout);
-	}
-
 	componentWillMount() {
 		this.shuffleAnswers();
 	}
@@ -69,7 +65,7 @@ class OptionContainer extends Component {
 					blockClick: false,
 				});
 				
-			}, 300);
+			}, 1500);
 		}
 	}
 

@@ -14,13 +14,14 @@ import Client from '../Client';
 // 	1b.[x] Handle Error - Code 3: Token Not Found.
 // 2.[x]  handle errors with response codes from api.
 // 	2a. [x] Mainly handle Code 1: No Results, API doesnt have enough results (Ex. Asking for 10 question but only have 8).
-// 3.[ ]  make a loading component and use for category and question loading.
-// 4.[ ]  make responsive
-// 5.[ ]  check console errors and clean up accordinly
-// 6.[ ]  end screen with score out of 10
-// 7.[ ]  show questions available in each category and then number of questions available per difficulty. 
+// 3. [ ]  Clicking any category needs to set category to empty same with mix it up in difficulty
+// 4.[ ]  make a loading component and use for category and question loading.
+// 5.[ ]  make responsive
+// 6.[ ]  check console errors and clean up accordinly
+// 7.[ ]  end screen with score out of 10
+// 8.[ ]  show questions available in each category and then number of questions available per difficulty. 
 //    		Might require lots of calls to same url, making it slow.
-// 8.[ ]  Allow users one wrong answer? - fade it out when clicked.
+// 9.[ ]  Allow users one wrong answer? - fade it out when clicked.
 
 class Quiz extends Component {
 	constructor(props) {
@@ -61,7 +62,6 @@ class Quiz extends Component {
 
 	resetToken() {
 		Client.fetchToken((data) => {
-			alert("new token");
 			this.setState({
 				sessionToken: data.token,
 			});

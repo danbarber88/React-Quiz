@@ -15,7 +15,7 @@ class CategoryContainer extends Component {
 				categoryChoice={this.props.categoryChoice}
 			/>
 		))
-		
+
 		return(
 			<div>
 				<h1>Category?</h1>
