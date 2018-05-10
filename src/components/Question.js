@@ -11,6 +11,7 @@ class Question extends Component {
 		super(props)
 
 		this.state = {
+			error: false,
 			questions: [],
 			currentQuestion: {},
 			questionNumber: 0,
@@ -19,6 +20,12 @@ class Question extends Component {
 
 		this.getQuestions = this.getQuestions.bind(this);
 		this.nextQuestion = this.nextQuestion.bind(this);
+	}
+
+	componentWillUnmount() {
+		this.setState({
+			error: false,
+		});
 	}
 
 	componentWillMount() {
@@ -30,12 +37,19 @@ class Question extends Component {
 		const difficulty = this.props.difficulty;
 		const token = this.props.token;
 		Client.fetchQuestions(category, difficulty, token, (data) => {
-			this.setState({
-				questions: data.results,
-				currentQuestion: data.results[0],
-				questionNumber: this.state.questionNumber + 1,
-				isLoading: false,
-			});
+			if(data.response_code !== 0) {
+				this.props.handleErrors(data.response_code);
+				this.setState({
+					error: true,
+				});
+			} else {
+				this.setState({
+					questions: data.results,
+					currentQuestion: data.results[0],
+					questionNumber: this.state.questionNumber + 1,
+					isLoading: false,
+				});
+			};
 		});
 	};
 
@@ -53,8 +67,12 @@ class Question extends Component {
 
 	render() {
 
-		// Redirect to category if all question have been answered
-		if (this.state.questionNumber > this.state.questions.length) {
+		if(this.state.error) {
+			return <Redirect to="/error" />
+		}
+
+		// Redirect to category if all question have been answered but only if there were questions in the first place.
+		if (this.state.questionNumber > this.state.questions.length && this.state.questions.length > 0) {
 			return <Redirect to="/category" />
 		}
 

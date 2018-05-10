@@ -13,6 +13,10 @@ class OptionContainer extends Component {
 		}
 	}
 
+	componentWillUnmount() {
+		clearTimeout(this.state.timeout);
+	}
+
 	componentWillMount() {
 		this.shuffleAnswers();
 	}
